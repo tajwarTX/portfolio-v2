@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cutting Mat Wireframes</title>
+<style>
+:root{--ink:#222;--mid:#888;--lite:#ddd;--bg:#f4f4f2}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);font:13px/1.4 ui-monospace,Menlo,monospace;color:var(--ink);padding:24px 16px}
+h1{font-size:18px;margin:0 0 4px}
+.sub{color:var(--mid);margin:0 0 24px}
+.row{display:flex;gap:32px;align-items:flex-start;flex-wrap:wrap}
+.frame{background:#fff;border:2px solid var(--ink);position:relative}
+.desk{width:900px;max-width:100%}
+.mob{width:300px}
+.cap{font-weight:700;margin:0 0 6px}
+.sec{position:relative;border-bottom:2px dashed var(--mid);padding:28px 24px;
+ background-image:linear-gradient(var(--lite) 1px,transparent 1px),linear-gradient(90deg,var(--lite) 1px,transparent 1px);background-size:40px 40px}
+.tag{position:absolute;top:6px;left:8px;font-size:11px;background:var(--ink);color:#fff;padding:1px 6px}
+.box{border:2px solid var(--ink);background:#fff;padding:8px;display:flex;align-items:center;justify-content:center;text-align:center}
+.thin{border:1px dashed var(--ink)}
+.x{background:linear-gradient(to top right,transparent 49.5%,var(--mid) 50%,transparent 50.5%),linear-gradient(to top left,transparent 49.5%,var(--mid) 50%,transparent 50.5%),#fafafa}
+.note{color:var(--mid);font-size:11px;margin-top:6px}
+.flex{display:flex;gap:12px;flex-wrap:wrap}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;border-bottom:2px solid var(--ink);background:#fff}
+.nav .t{display:flex;gap:6px}.nav .t span{border:2px solid var(--ink);padding:2px 8px;font-size:11px}
+.rot1{transform:rotate(-4deg)}.rot2{transform:rotate(3deg)}.rot3{transform:rotate(-2deg)}
+.ruler{height:22px;border:2px solid var(--ink);background:repeating-linear-gradient(90deg,var(--ink) 0 1px,transparent 1px 10px);background-size:10px 8px;background-repeat:repeat-x}
+</style></head><body>
+<h1>Portfolio v2: cutting-mat wireframes (draft 2 · workshop bench, dark)</h1>
+<p class="sub">Low-fidelity layout only. Grey grid = the cutting mat (one continuous surface the whole page scrolls over). Boxes = objects lying on the mat. ✕ = image or 3D model.</p>
+<div class="row">
+
+<div><p class="cap">DESKTOP · 1440</p>
+<div class="frame desk">
+ <div class="nav"><div class="box" style="width:40px;height:22px;padding:0">TX</div>
+  <div class="t"><span>about</span><span>builds</span><span>archive</span><span>awards</span><span>contact</span></div>
+  <div class="box" style="padding:2px 8px">resume ↓</div></div>
+ <div class="note" style="padding:2px 16px">Nav = label-maker tape strips stuck to the top edge of the mat.</div>
+
+ <div class="sec" style="height:360px"><span class="tag">01 HERO</span>
+  <div class="box rot1" style="position:absolute;left:300px;top:90px;width:300px;height:170px;flex-direction:column">HELLO my name is<br><b>MAHIR TAJWAR CHOWDHURY</b><br><small>(name-tag sticker, same as Home 2 · tap to switch language)</small></div>
+  <div class="box" style="position:absolute;right:30px;top:40px;width:60px;height:280px;writing-mode:vertical-rl">DIGITAL CALIPER · reads scroll %</div>
+  <div class="box thin" style="position:absolute;left:30px;top:220px;width:200px;height:60px">one-line intro on masking tape: "robotics · EE · olympiad"</div>
+  <div class="box x rot2" style="position:absolute;left:640px;top:200px;width:130px;height:90px">props: solder spool · resistors · ESP32</div>
+  <div class="note" style="position:absolute;bottom:8px;left:24px">scroll cue at bottom; cutting-mat angle lines and protractor printed on the mat</div>
+ </div>
+
+ <div class="sec" style="height:320px"><span class="tag">02 ABOUT</span>
+  <div class="box x rot1" style="position:absolute;left:40px;top:50px;width:180px;height:210px">polaroid · taped corners</div>
+  <div class="box" style="position:absolute;left:260px;top:50px;width:340px;height:200px;flex-direction:column;align-items:flex-start;text-align:left">ENGINEERING DRAWING sheet + title block<br>— short bio, 3–4 lines<br>— RIT · Electrical Engineering<br>— from Bangladesh · Mirzapur Cadet College</div>
+  <div class="flex" style="position:absolute;right:30px;top:60px;width:220px;flex-direction:column;gap:8px"><div class="box rot2" style="height:26px;background:#222;color:#fff">ESP32</div><div class="box rot1" style="height:26px;background:#222;color:#fff">KiCad · CAD</div><div class="box" style="height:26px;background:#222;color:#fff">Python · C++</div><div class="box rot3" style="height:26px;background:#222;color:#fff">ROS · Firebase</div><div class="note">skills = label-maker tapes</div></div>
+ </div>
+
+ <div class="sec" style="height:360px"><span class="tag">03 BUILDS (recent hackathon wins)</span>
+  <div class="box rot1" style="position:absolute;left:40px;top:50px;width:390px;height:270px;flex-direction:column;align-items:flex-start;text-align:left;justify-content:flex-start">MANILA FOLDER · FabriCUe<br>MakeCU '26 · 2 prizes<br><br>[photo, paper-clipped]<br>BOM: ESP32 · YRM1003 UHF RFID · WS2812B · speaker<br>sticky note: "undocumented RFID reader"<br>[Devpost] [GitHub]</div>
+  <div class="box rot2" style="position:absolute;left:460px;top:60px;width:390px;height:270px;flex-direction:column;align-items:flex-start;text-align:left;justify-content:flex-start">MANILA FOLDER · Space Ducky<br>Tiger Games '26 · Best Solo Game<br><br>[photo, paper-clipped]<br>BOM: Arduino Nano · bio-capacitive veroboard · Python 230400 baud · Canvas + Socket.IO<br>sticky note: "skin-resistance thresholds"<br>[GitHub]</div>
+ </div>
+
+ <div class="sec" style="height:400px"><span class="tag">04 ARCHIVE (robotics, 3D)</span>
+  <div class="box x" style="position:absolute;left:40px;top:50px;width:420px;height:290px">ACTIVE 3D MODEL (drone / arm / rover / rocket / line-follower / humanoid)<br>drag to rotate</div>
+  <div class="box" style="position:absolute;left:490px;top:50px;width:370px;height:200px;flex-direction:column;align-items:flex-start;text-align:left">SPEC SHEET (engineering-drawing title block)<br>name · year · role · parts list · what I learned · links</div>
+  <div class="flex" style="position:absolute;left:490px;top:270px">
+   <div class="box" style="width:52px;height:52px">◀</div><div class="box x" style="width:52px;height:52px"></div><div class="box x" style="width:52px;height:52px"></div><div class="box x" style="width:52px;height:52px"></div><div class="box" style="width:52px;height:52px">▶</div></div>
+  <div class="note" style="position:absolute;left:490px;top:335px">thumbnails = parts-bin drawers; picking one swaps the model</div>
+ </div>
+
+ <div class="sec" style="height:340px"><span class="tag">05 AWARDS</span>
+  <div class="flex" style="position:absolute;left:40px;top:44px">
+   <div class="box" style="width:90px;height:34px">2 gold</div><div class="box" style="width:90px;height:34px">4 silver</div><div class="box" style="width:90px;height:34px">6 bronze</div><div class="box" style="width:90px;height:34px">4 technical</div><div class="box" style="width:90px;height:34px">3 hackathon</div><div class="box" style="width:150px;height:34px">filter: intl/natl/hack</div></div>
+  <div class="box rot1" style="position:absolute;left:60px;top:110px;width:220px;height:180px">certificate stack (top card = selected)</div>
+  <div class="box" style="position:absolute;left:330px;top:100px;width:530px;height:200px;flex-direction:column;align-items:stretch;text-align:left;justify-content:flex-start;gap:6px">
+   <div class="thin" style="padding:4px">2025 · WRO International Final · Bronze · RoboMission</div>
+   <div class="thin" style="padding:4px">2023 · WRO International Final · 11th / 120 · Future Engineers</div>
+   <div class="thin" style="padding:4px">2023 · IRO · Silver · AI Autonomous Driving</div>
+   <div class="thin" style="padding:4px">… list (receipt / log-sheet style)</div></div>
+ </div>
+
+ <div class="sec" style="height:280px"><span class="tag">06 FIELD NOTES (photos + timeline)</span>
+  <div class="box x rot2" style="position:absolute;left:40px;top:50px;width:130px;height:150px">photo</div>
+  <div class="box x rot1" style="position:absolute;left:150px;top:80px;width:130px;height:150px">photo</div>
+  <div class="box x rot3" style="position:absolute;left:270px;top:45px;width:130px;height:150px">photo</div>
+  <div class="box" style="position:absolute;left:460px;top:50px;width:400px;height:40px">MEASURING TAPE TIMELINE 2019 ─── 2026</div>
+  <div class="box thin" style="position:absolute;left:460px;top:110px;width:190px;height:110px">Robotics & Programming Club · President</div>
+  <div class="box thin" style="position:absolute;left:670px;top:110px;width:190px;height:110px">Student govt · House Cultural Prefect</div>
+ </div>
+
+ <div class="sec" style="height:300px;border-bottom:0"><span class="tag">07 CONTACT</span>
+  <div class="box" style="position:absolute;left:200px;top:50px;width:500px;height:200px;flex-direction:column">SHIPPING LABEL / ENVELOPE FORM<br>from: [name] [email] · message · [ SEND ]<br><small>checkbox: "also send me the resume PDF"</small></div>
+  <div class="flex" style="position:absolute;left:740px;top:70px;flex-direction:column">
+   <div class="box" style="width:110px;height:30px">GitHub</div><div class="box" style="width:110px;height:30px">LinkedIn</div><div class="box" style="width:110px;height:30px">YouTube</div></div>
+ </div>
+</div></div>
+
+<div><p class="cap">MOBILE · 390</p>
+<div class="frame mob">
+ <div class="nav"><div class="box" style="width:34px;height:20px;padding:0">TX</div><div class="box" style="padding:2px 8px">menu</div></div>
+ <div class="sec" style="height:300px"><span class="tag">01</span>
+  <div class="box rot1" style="margin:70px auto 0;width:220px;height:130px">name-tag sticker</div>
+  <div class="ruler" style="margin-top:30px"></div><div class="note">caliper becomes a horizontal ruler</div></div>
+ <div class="sec" style="height:340px"><span class="tag">02</span>
+  <div class="box x rot1" style="margin:24px auto 12px;width:150px;height:150px">polaroid</div>
+  <div class="box" style="height:110px">index card bio</div></div>
+ <div class="sec" style="height:300px"><span class="tag">03</span><div class="box" style="margin-top:24px;height:120px">folder · FabriCUe</div><div class="box" style="margin-top:10px;height:120px">folder · Space Ducky</div></div>
+ <div class="sec" style="height:380px"><span class="tag">04</span>
+  <div class="box x" style="margin-top:24px;height:180px">3D model · tap to load</div>
+  <div class="flex" style="margin:8px 0"><div class="box x" style="width:40px;height:40px"></div><div class="box x" style="width:40px;height:40px"></div><div class="box x" style="width:40px;height:40px"></div><div class="note">swipe →</div></div>
+  <div class="box" style="height:90px">spec sheet</div></div>
+ <div class="sec" style="height:250px"><span class="tag">05</span>
+  <div class="flex" style="margin-top:24px"><div class="box" style="width:76px;height:28px">gold</div><div class="box" style="width:76px;height:28px">silver</div><div class="box" style="width:76px;height:28px">bronze</div></div>
+  <div class="box" style="height:130px;margin-top:10px">award log list</div></div>
+ <div class="sec" style="height:220px"><span class="tag">06</span>
+  <div class="box x" style="margin-top:24px;height:120px">photo carousel</div><div class="box" style="height:30px;margin-top:8px">timeline</div></div>
+ <div class="sec" style="height:220px;border-bottom:0"><span class="tag">07</span>
+  <div class="box" style="margin-top:24px;height:150px">shipping-label form</div></div>
+</div></div>
+
+</div></body></html>
