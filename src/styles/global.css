@@ -1,0 +1,259 @@
+:root {
+  /* the mat */
+  --mat: #0d1a19;
+  --mat-deep: #081110;
+  --grid: #172725;
+  --grid-major: #243b37;
+  --print: #5e8b80;
+
+  /* objects on the mat */
+  --paper: #e7e4da;
+  --paper-shade: #d6d2c4;
+  --line: #8a97a0;
+  --ink: #1b1f22;
+  --ink-soft: #4a5257;
+  --tape: rgba(216, 205, 176, 0.86);
+  --kapton: rgba(201, 138, 30, 0.78);
+  --kapton-solid: #d79a2b;
+  --label: #121212;
+  --label-ink: #ecebe6;
+  --manila: #d9c08c;
+  --manila-shade: #c4a86f;
+  --pcb: #1f5e3a;
+  --solder: #b8bcbf;
+
+  /* signal accent, used sparingly */
+  --signal: #ff5a1f;
+
+  /* text on the mat */
+  --on-mat: #dfe7e4;
+  --on-mat-dim: #9fb3ad;
+
+  --font-display: 'Big Shoulders Stencil Display', 'Arial Narrow', sans-serif;
+  --font-body: 'Archivo', system-ui, sans-serif;
+
+  --shadow-lift: 0 1px 1px rgba(0, 0, 0, 0.35), 0 10px 24px -6px rgba(0, 0, 0, 0.6);
+  --shadow-flat: 0 1px 1px rgba(0, 0, 0, 0.4), 0 4px 10px -4px rgba(0, 0, 0, 0.5);
+
+  --gutter: clamp(16px, 4vw, 56px);
+  --max: 1240px;
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--mat);
+  color: var(--on-mat);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: 3px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- the cutting mat ---------- */
+.mat {
+  position: relative;
+  isolation: isolate;
+  overflow-x: clip;
+  background-color: var(--mat);
+  background-image:
+    radial-gradient(ellipse 120% 60% at 50% 0%, transparent 40%, rgba(0, 0, 0, 0.35) 100%),
+    linear-gradient(var(--grid-major) 1.5px, transparent 1.5px),
+    linear-gradient(90deg, var(--grid-major) 1.5px, transparent 1.5px),
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 100% 100%, 200px 200px, 200px 200px, 40px 40px, 40px 40px;
+  background-position: 0 0, -1px -1px, -1px -1px, -1px -1px, -1px -1px;
+}
+
+.mat::after {
+  /* paper dust / grain */
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.08;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.mat-print {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  color: var(--print);
+}
+
+.section {
+  position: relative;
+  z-index: 1;
+  padding: clamp(72px, 10vw, 140px) var(--gutter);
+}
+
+.section-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Section heading: stencil word sprayed on the mat, plus a label-maker strip */
+.section-head {
+  display: flex;
+  align-items: flex-end;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: clamp(32px, 5vw, 64px);
+}
+
+.stencil {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(56px, 9vw, 128px);
+  line-height: 0.82;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: var(--on-mat);
+  margin: 0;
+  opacity: 0.92;
+}
+
+.section-head p {
+  margin: 0 0 6px;
+  max-width: 44ch;
+  color: var(--on-mat-dim);
+  font-size: 17px;
+}
+
+/* label maker tape */
+.label-tape {
+  display: inline-flex;
+  align-items: center;
+  background: var(--label);
+  color: var(--label-ink);
+  font-family: var(--font-body);
+  font-stretch: 112%;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 12px 4px;
+  box-shadow: var(--shadow-flat);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.15), 0 -1px 0 rgba(0, 0, 0, 0.8);
+  clip-path: polygon(0 0, 100% 2%, 99.4% 50%, 100% 98%, 0 100%, 0.6% 50%);
+  white-space: nowrap;
+}
+
+/* masking / kapton tape pieces */
+.tape {
+  position: absolute;
+  width: 110px;
+  height: 30px;
+  background: var(--tape);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  clip-path: polygon(2% 0, 98% 4%, 100% 30%, 97% 52%, 100% 78%, 97% 100%, 3% 96%, 0 70%, 3% 46%, 0 20%);
+  z-index: 3;
+}
+
+.tape.kapton {
+  background: var(--kapton);
+  mix-blend-mode: normal;
+}
+
+/* engineering-drawing paper */
+.paper {
+  position: relative;
+  background-color: var(--paper);
+  color: var(--ink);
+  box-shadow: var(--shadow-lift);
+  background-image:
+    linear-gradient(rgba(138, 151, 160, 0.18) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(138, 151, 160, 0.18) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-stretch: 110%;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  padding: 10px 16px;
+  border: 2px solid currentColor;
+  background: transparent;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn.signal {
+  background: var(--signal);
+  border-color: var(--signal);
+  color: #140700;
+}
+
+.placeholder-note {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--signal);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
